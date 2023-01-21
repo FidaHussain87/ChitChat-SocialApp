@@ -14,7 +14,6 @@ export const register = async (req, res) => {
       location,
       occupation,
     } = req.body;
-
     const newUser = new User({
       firstName,
       lastName,
@@ -40,10 +39,11 @@ export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
+
     if (!user) {
       res.status(400).json({ message: "User doesn't exist" });
     }
-    const isPasswordMatch = await bcrypt.compare(password, user.password);
+    const isPasswordMatch = bcrypt.compare(password, user.password);
     if (!isPasswordMatch) {
       res.status(400).json({ message: "Invalid Credentails" });
     }
@@ -76,7 +76,6 @@ export const getUserFriends = async (req, res) => {
 /* addRemoveFriend */
 export const addRemoveFriend = async (req, res) => {
   try {
-    
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
