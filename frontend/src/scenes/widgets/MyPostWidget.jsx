@@ -27,7 +27,7 @@ import { setPosts } from 'state'
 
 const MyPostWidget = ({ picturePath }) => {
   const dispatch = useDispatch()
-  const [isImage, setIsImage] = useState(falsae)
+  const [isImage, setIsImage] = useState(false)
   const [image, setImage] = useState(null)
   const [post, setPost] = useState('')
   const { palette } = useTheme()
