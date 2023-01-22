@@ -22,7 +22,7 @@ const UserSchema = new mongoose.Schema(
     },
     password: {
       type: String,
-      required: true,
+      require: true,
       min: 5,
     },
     picturePath: {
@@ -57,7 +57,7 @@ UserSchema.pre("save", async function (next) {
     return next();
   }
   const salt = await bcrypt.genSalt(9);
-  const hashedPassword = await bcrypt.hash(this.password, salt);
+  hashedPassword = await bcrypt.hash(this.password, salt);
   this.password = hashedPassword;
   next();
 });
