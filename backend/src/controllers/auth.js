@@ -59,28 +59,3 @@ export const login = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
-
-/* get User */
-
-export const getUser = async (req, res) => {
-  try {
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-};
-
-/* getUserFriends */
-export const getUserFriends = async (req, res) => {
-  try {
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-};
-
-/* addRemoveFriend */
-export const addRemoveFriend = async (req, res) => {
-  try {
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-};
