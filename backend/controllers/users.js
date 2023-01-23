@@ -33,8 +33,10 @@ export const getUserFriends = async (req, res) => {
         }
       );
       res.status(200).json(formattedFriends);
+      return;
     } else {
       res.status(404).json({ message: "friend list is empty" });
+      return;
     }
   } catch (error) {
     res.status(404).json({ error: error.message });
